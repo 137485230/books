@@ -1,0 +1,27 @@
+name: Deploy Worker
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  repository_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build & Deploy Worker
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          
+          
+          - name: Deploy to Cloudflare Workers
+  uses: cloudflare/wrangler-action@v3
+  with:
+    # 添加 --verbose 参数来获取详细日志
+    command: 'deploy --verbose'
+    accountId: ${{ secrets.CF_ACCOUNT_ID }}
+    apiToken: ${{ secrets.CF_API_TOKEN }}
