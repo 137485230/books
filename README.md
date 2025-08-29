@@ -1,35 +1,35 @@
-## Why
+## 为什么
 
 The Gemini API is [free](https://ai.google.dev/pricing "limits applied!"),
-but there are many tools that work exclusively with the OpenAI API.
+但是有很多工具专门与OpenAI API一起使用。
 
-This project provides a personal OpenAI-compatible endpoint for free.
-
-
-## Serverless?
-
-Although it runs in the cloud, it does not require server maintenance.
-It can be easily deployed to various providers for free
-(with generous limits suitable for personal use).
-
-> [!TIP]
-> Running the proxy endpoint locally is also an option,
-> though it's more appropriate for development use.
+这个项目提供了一个个人的、兼容OpenAI的免费端点。
 
 
-## How to start
+## 无服务器？
 
-You will need a personal Google [API key](https://makersuite.google.com/app/apikey).
+虽然它在云端运行，但不需要服务器维护。
+它可以轻松部署到各种提供商上并且免费
+（带有适合个人使用的慷慨限制）。
 
-> [!IMPORTANT]
-> Even if you are located outside of the [supported regions](https://ai.google.dev/gemini-api/docs/available-regions#available_regions),
-> it is still possible to acquire one using a VPN.
+> [!提示]
+> 也可以在本地运行代理端点，
+> 但它更适合于开发使用。
 
-Deploy the project to one of the providers, using the instructions below.
-You will need to set up an account there.
 
-If you opt for “button-deploy”, you'll be guided through the process of forking the repository first,
-which is necessary for continuous integration (CI).
+## 如何开始
+
+您需要一个个人 Google [API 密钥](https://makersuite.google.com/app/apikey).
+
+> [!重要]
+> 即使您位于 [支持的地区](https://ai.google.dev/gemini-api/docs/available-regions#available_regions)之外，
+> 仍然可以使用VPN获取。
+
+按照以下说明将项目部署到其中一个提供商。
+您需要在那里设置一个账户。
+
+如果您选择“按钮部署”，系统将引导您首先克隆仓库。
+这是持续集成（CI）所必需的。
 
 
 ### Deploy with Vercel
@@ -59,10 +59,10 @@ which is necessary for continuous integration (CI).
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/PublicAffairs/openai-gemini)
 - Alternatively can be deployed manually pasting content of [`src/worker.mjs`](src/worker.mjs)
   to https://workers.cloudflare.com/playground (see there `Deploy` button).
-- Alternatively can be deployed with [cli](https://developers.cloudflare.com/workers/wrangler/):
-  `wrangler deploy`
-- Serve locally: `wrangler dev`
-- _Worker_ [limits](https://developers.cloudflare.com/workers/platform/limits/#worker-limits)
+- 或者可以部署为 [cli](https://developers.cloudflare.com/workers/wrangler/):
+  `wrangler 部署`
+- 本地服务: `wrangler dev`
+- _工人_ [限制](https://developers.cloudflare.com/workers/platform/limits/#worker-limits)
 
 
 ### Deploy to Deno
@@ -194,3 +194,4 @@ For more details, refer to the [Gemini API docs](https://ai.google.dev/gemini-ap
 - [x] `embeddings`
   - [x] `dimensions`
 - [x] `models`
+Commit changes
